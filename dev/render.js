@@ -5,7 +5,7 @@ export default function render (jml, scope) {
   if (!jml) {
     res = ''
   } else if (Array.isArray(jml)) {
-    let [node, attributes, ...children] = jml
+    let [node, attributes, children] = jml
     node = createNode(node)
     if (attributes) {
       setAttributes(node, attributes, scope)

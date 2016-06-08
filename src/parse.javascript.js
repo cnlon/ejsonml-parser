@@ -5,42 +5,54 @@ import parse from './index'
 
 const gep = new Gep()
 
-let _toRuntime
+const commentRE = /^<!--.*-->$/
+
+let parseAttributes
 
 export default function jsParse (template, toRuntime) {
   let jml = parse(template)
-  _toRuntime = toRuntime
+  parseAttributes = toRuntime
+                  ? parseAttributesWithRuntime
+                  : parseAttributesWithoutRuntime
   return translate(jml)
 }
 
 function translate (jml) {
-  let res
   if (!jml) {
-    res = ''
+    return ''
   } else if (Array.isArray(jml)) {
-    parseAttributes(jml[1], _toRuntime)
-    jml[2].forEach(child => translate(child))
-    return jml
-  } else {
-    res = jml
+    parseAttributes(jml[1])
+    jml[2] = jml[2]
+            .filter(child => !commentRE.test(child))
+            .map(child => translate(child))
   }
-  return res
+  return jml
 }
 
-function parseAttributes (attributes) {
+function parseAttributesWithoutRuntime (attributes) {
   let val
   Object.keys(attributes).forEach(key => {
     if (key[0] === ':') {
       val = attributes[key]
       val = gep.parse(val)
-      val = gep.make(val)
-      if (!_toRuntime) {
-        val = val.toString()
-        attributes[key] = val
-      } else {
-        delete attributes[key]
-        attributes[key.slice(1)] = val
+      val = gep.make(val, true)
+      attributes[key] = val
+    }
+  })
+}
+
+function parseAttributesWithRuntime (attributes) {
+  let val
+  Object.keys(attributes).forEach(key => {
+    if (key[0] === ':') {
+      val = attributes[key]
+      delete attributes[key]
+      key = key.slice(1)
+      if (attributes.hasOwnProperty(key)) {
+        val = '\'' + attributes[key] + '\'+(' + val + ')'
       }
+      val = gep.parse(val, true)
+      attributes[key] = val
     }
   })
 }

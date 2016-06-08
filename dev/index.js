@@ -7,6 +7,7 @@ window.onload = function () {
   `
   <div class="className" style="background-color: red;"  :style="style">
     <strong :text="name+','"></strong>你好
+    <!--comment!!-->
   </div>
   `
   const tplNode = document.getElementById('tpl')
