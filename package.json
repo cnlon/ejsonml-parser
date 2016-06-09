@@ -1,6 +1,6 @@
 {
   "name": "ejsonml-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse template to eJsonML",
   "main": "dist/ejsonml.parser.js",
   "scripts": {
