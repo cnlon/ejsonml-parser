@@ -1,6 +1,6 @@
 {
   "name": "ejsonml-parser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parse template to eJsonML",
   "main": "lib/",
   "scripts": {
