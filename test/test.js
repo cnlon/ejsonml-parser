@@ -1,10 +1,10 @@
-var assert = require('chai').assert
-var parse = require('../dist/ejsonml.parser.js')
+const assert = require('chai').assert
+const parse = require('../lib')
 
-var equal = assert.equal
+const equal = assert.equal
 
 /* global describe, it */
-describe('ejsonml-parser', function () {
+describe('ejsonml-parser', () => {
   const tpl =
   `
   <div class="className" style="background-color: red;"  :style="style">
@@ -13,10 +13,10 @@ describe('ejsonml-parser', function () {
   </div>
   `
   const jml = parse(tpl)
-  it('Outer tag should be div', function () {
+  it('Outer tag should be div', () => {
     equal(jml[0], 'div')
   })
-  it('Should have comment', function () {
+  it('Should have comment', () => {
     equal(jml[2][3], '<!--comment!!-->')
   })
 })
