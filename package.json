@@ -12,9 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/longhaohe/ejsonml.git"
+    "url": "git+https://github.com/longhaohe/ejsonml-parser.git"
   },
   "keywords": [
+    "ejsonml-parser",
     "jsonml",
     "expression",
     "ejsonml",
@@ -23,9 +24,9 @@
   "author": "longhao he <longhaohe@gmail.com> (http://longhaohe.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/longhaohe/ejsonml/issues"
+    "url": "https://github.com/longhaohe/ejsonml-parser/issues"
   },
-  "homepage": "https://github.com/longhaohe/ejsonml#readme",
+  "homepage": "https://github.com/longhaohe/ejsonml-parser#readme",
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
