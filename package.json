@@ -40,6 +40,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "gep": "^1.3.0",
     "htmlparser2": "^3.9.0"
   }
 }
