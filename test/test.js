@@ -1,22 +1,24 @@
 const assert = require('chai').assert
-const parse = require('../lib')
+const Parser = require('../lib')
 
 const equal = assert.equal
 
 /* global describe, it */
 describe('ejsonml-parser', () => {
   const tpl =
-  `
-  <div class="className" style="background-color: red;"  :style="style">
-    <strong :text="name+','"></strong>你好
-    <!--comment!!-->
-  </div>
-  `
-  const jml = parse(tpl)
-  it('Outer tag should be div', () => {
-    equal(jml[0], 'div')
+`
+<div *if="true" class="className" style="background-color: red;"  :style="style">
+  <strong :text="name+','"></strong>你好
+  <!--comment!!-->
+</div>
+`
+  const parser = new Parser(tpl)
+  const ejml = parser.ejml[0]
+  const hjson = parser.parse()
+  it('Outer tag of ejml should be *', () => {
+    equal(ejml[0], '*')
   })
-  it('Should have comment', () => {
-    equal(jml[2][3], '<!--comment!!-->')
+  it('Outer tag of hjson should has a function attribute \'*if\'', () => {
+    equal(hjson[1]['*if'].slice(0, 9), 'function(')
   })
 })
