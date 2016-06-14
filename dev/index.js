@@ -2,7 +2,7 @@ const Parser = require('../lib')
 
 const tpl =
 `
-<div *if="true" class="className" style="background-color: red;"  :style="style">
+<div *if="true" class="className" :class="className2" style="background-color: red;"  :style="style">
   <strong :text="name+','"></strong>你好
   <!--comment!!-->
 </div>
