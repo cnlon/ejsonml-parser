@@ -2,8 +2,8 @@ const Parser = require('../lib')
 
 const tpl =
 `
-<div *if="true" class="className" :class="className2" style="background-color: red;"  :style="style">
-  <strong :text="name+','"></strong>你好
+<div *if="true" *for="a in data" class="className" :class="className2" style="background-color: red;"  :style="style">
+  <strong :text="name+a"></strong>你好
   <!--comment!!-->
 </div>
 `
