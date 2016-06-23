@@ -12,13 +12,9 @@ describe('ejsonml-parser', () => {
   <!--comment!!-->
 </div>
 `
-  const parser = new Parser(tpl)
-  const ejml = parser.ejml[0]
-  const hjson = parser.parse()
-  it('Outer tag of ejml should be *', () => {
-    equal(ejml[0], '*')
-  })
-  it('Outer tag of hjson should has a function attribute \'*if\'', () => {
-    equal(hjson[1]['*if'].slice(0, 9), 'function(')
+  const parser = new Parser()
+  const ejml = parser.parse(tpl)
+  it('Outer tag of ejml should be template', () => {
+    equal(ejml[0], 'template')
   })
 })
