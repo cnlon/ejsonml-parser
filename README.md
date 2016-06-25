@@ -2,8 +2,9 @@
 
 # ejsonml-parser
 
-Parse template to [eJsonML](https://github.com/longhaohe/ejsonml)
+Parse HTML template to [eJsonML](https://github.com/longhaohe/ejsonml)
 
+[![npm version](https://badge.fury.io/js/ejsonml-parser.svg)](https://badge.fury.io/js/ejsonml-parser)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 ## License
