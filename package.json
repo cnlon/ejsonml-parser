@@ -11,7 +11,7 @@
   "pre-commit": "lint",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/longhaohe/ejsonml-parser.git"
+    "url": "git+https://github.com/lon3/ejsonml-parser.git"
   },
   "keywords": [
     "ejsonml-parser",
@@ -23,9 +23,9 @@
   "author": "longhao he <longhaohe@gmail.com> (http://longhaohe.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/longhaohe/ejsonml-parser/issues"
+    "url": "https://github.com/lon3/ejsonml-parser/issues"
   },
-  "homepage": "https://github.com/longhaohe/ejsonml-parser#readme",
+  "homepage": "https://github.com/lon3/ejsonml-parser#readme",
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
